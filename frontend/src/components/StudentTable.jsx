@@ -11,11 +11,11 @@ import { exportToCSV } from "../../utils/exportCSV.js"
 import { useMemo } from "react"
 
 const StudentTable = () => {
-  //const {  } = useStudentStore()
+  // const {  } = useStudentStore()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingStudent, setEditingStudent] = useState(null)
   const [students , setStudents] = useState([])
-  const { refreshStudentTable,query,setQuery } = useStudentStore()
+  const { refreshStudentTable,setRefreshStudentTable, query,setQuery } = useStudentStore()
   const [selectedStudent, setSelectedStudent] = useState(null)
    const [selectedImage, setSelectedImage] = useState(null)
  const [AllStudents, setAllStudents] = useState([]); 
@@ -61,6 +61,8 @@ useEffect(()=>{
       const response = await axiosInstance.delete(`/students/${id}`)
       toast("Student deleted successfully 🗑️")
       setStudents(students.filter((student)=>student._id !== id))
+      setRefreshStudentTable((prev) => !prev)
+      
     } catch (error) {
       toast.error("Error deleting student. Please retry 🔄")
     }
@@ -74,6 +76,7 @@ useEffect(()=>{
         const response =await axiosInstance.get('/students')
         setStudents((await response).data)
         setAllStudents(response.data)
+        
       } catch (error) {
         toast.error("Something went wrong")
       }

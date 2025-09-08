@@ -11,8 +11,9 @@ const CourseTable = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingCourse, setEditingCourse] = useState(null)
   const [courses, setCourses] = useState([])
-  const { refreshCourseTable , query,setQuery } = useStudentStore()
+  const { refreshCourseTable ,setRefreshCourseTable, query,setQuery } = useStudentStore()
   const [allCourses,setAllCourses] = useState([])
+  const [deleted,setDeleted] = useState(false)
    
 
   // Handle edit course
@@ -57,6 +58,9 @@ const CourseTable = () => {
     getCoursesFromAPI()
   }, [refreshCourseTable])
 
+  useEffect(() => {
+    getCoursesFromAPI()
+  }, [deleted,setDeleted])
 
   // update allCourses when query or courses change
   useEffect(()=>{
@@ -77,6 +81,8 @@ const CourseTable = () => {
          //alert("succesfully deleted course")
          toast("Course deleted successfully 🗑️")
           setCourses(courses.filter((course)=>course._id !== id)) 
+         setRefreshCourseTable((prev) => !prev)
+         setDeleted((prev)=>!prev)
 
      }
      catch(error){
