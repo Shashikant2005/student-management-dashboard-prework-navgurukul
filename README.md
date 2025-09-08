@@ -8,7 +8,7 @@ The app connects to a **self-hosted backend** for storing and retrieving data.
 
 Backend server URL =  https://student-dash-backend.onrender.com
 
-Live Link : https://student-management-dashboard-lime.vercel.app/
+Live Link :https://student-management-dashboard-prewor-one.vercel.app/
 ---
 
 ## 🚀 Features
