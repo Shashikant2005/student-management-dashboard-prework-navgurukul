@@ -97,11 +97,11 @@ const DashboardCards = () => {
         ))}
       </div>
        
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"> */}
-           <DashboardCharts students={students} courses={courses}  />
-        {/* </div> */}
-      {/* Recent activity placeholder */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+      
+       <DashboardCharts students={students} courses={courses}  />
+      
+        
+      {/* <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h2>
         <div className="space-y-3">
           <div className="flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-400">
@@ -115,7 +115,8 @@ const DashboardCards = () => {
             <span className="text-xs">5 hours ago</span>
           </div>
         </div>
-      </div>
+      </div> */}
+
     </div>
   )
 }

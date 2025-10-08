@@ -21,7 +21,7 @@ const DashboardCharts = ({ students, courses }) => {
   const COLORS = ["#4F46E5", "#22C55E", "#F59E0B", "#EF4444"]
 
   return (
-    <div className="grid md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
       {/* Bar Chart */}
       <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow">
         <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Students per Course</h2>

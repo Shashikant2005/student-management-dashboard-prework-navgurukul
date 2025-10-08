@@ -112,26 +112,28 @@ useEffect(()=>{
 
   return (
     <div className="space-y-6"> <ToastContainer />
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Students
-          </h1>
+      {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+              Students
+            </h1>
 
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
-            <button
-              onClick={() => exportToCSV(students)}
-              className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 w-full sm:w-auto"
-            >
-              Export to CSV
-            </button>
-            <button
-              onClick={handleAddNew}
-              className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 w-full sm:w-auto"
-            >
-              Add Student
-            </button>
-          </div>
-    </div>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+              <button
+                onClick={() => exportToCSV(students)}
+                className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 w-full sm:w-auto"
+              >
+                Export to CSV
+              </button>
+              <button
+                onClick={handleAddNew}
+                className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 w-full sm:w-auto"
+              >
+                Add Student
+              </button>
+            </div>
+        </div>
+        {/* header ends here */}
 
 
       {/* Students table */}
@@ -221,12 +223,17 @@ useEffect(()=>{
           </table>
         </div>
       </div>
+      {/* student table ends here */}
 
       {/* Student form modal */}
       {isModalOpen && (
         <StudentFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} student={editingStudent} />
       )}
+      {/* student form modal ends here */}
 
+
+
+      {/* Student details modal */}
         {selectedImage && (
         <StudentImageModal
           imageUrl={selectedImage}

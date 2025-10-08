@@ -13,7 +13,7 @@ const Sidebar = ({ currentPage, setCurrentPage, sidebarOpen, setSidebarOpen }) =
     <>
       {/*  Mobile overlay */}
       {sidebarOpen && (
-        <div className="fixed inset-0 z-20 bg-white bg-opacity-50 lg:hidden" onClick={() => setSidebarOpen(false)} />
+        <div className="fixed inset-0 z-20 bg-indigo-200/60 bg-opacity-50 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
 
       {/* Sidebar */}

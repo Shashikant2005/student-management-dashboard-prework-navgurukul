@@ -180,7 +180,7 @@ const StudentFormModal = ({ isOpen, onClose, student }) => {
        <FullScreenLoader loading={loading}/>
       <div className="flex items-center justify-center min-h-screen px-4">
         <div
-          className="fixed inset-0 bg-gray-100 bg-opacity-75"
+          className="fixed inset-0 bg-indigo-300/60 bg-opacity-75"
           onClick={onClose}
         ></div>
 

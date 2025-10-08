@@ -27,8 +27,6 @@ function App() {
         return <StudentTable />
       case "courses":
         return <CourseTable />
-      // case "teachers":
-      //   return <TeacherTable />
       case "settings":
         return <Settings  />
       default:
@@ -47,8 +45,11 @@ function App() {
         setSidebarOpen={setSidebarOpen}
       />
 
+      {/* flex-1 to take remaining all space , 
+      it not done then it take only its needed space */}
+
       {/* Main content area */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className=" flex-1 flex flex-col overflow-hidden">
         {/* Topbar */}
         <Topbar setSidebarOpen={setSidebarOpen} />
 
