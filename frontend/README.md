@@ -110,3 +110,6 @@ This project uses React’s built-in optimization techniques to improve renderin
  3> Install dependencies:  npm install
 
  4> Run the frontend : npm run dev
+
+  # netflify personal access token :  nfp_pLbVnXLTW7rAZoXLKwGks8w33vyYN8jD6841
+  # netlify project side id : 044cb329-fd4e-4642-932d-7b9ebff45f0c
