@@ -20,15 +20,22 @@ jobs:
           node-version: 18
 
       - name: 📦 Install dependencies
-        run: npm install
+        working-directory: frontend
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: ⚙️ Build Vite app
+        working-directory: frontend
         run: npm run build
 
       - name: 🚀 Deploy to Netlify
+        working-directory: frontend
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          # The build output folder for Vite is 'dist'
           npx netlify-cli deploy --dir=dist --prod --site="$NETLIFY_SITE_ID"
